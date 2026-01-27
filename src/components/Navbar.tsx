@@ -19,8 +19,8 @@ export function Navbar({ user, currentView, onNavigate, onAuthClick, onSignOut }
 
   const navItems = [
     { id: 'analyzer', label: t('navbar.analyzer'), icon: FileText },
-    { id: 'apps', label: 'Browse Apps', icon: Grid },
-    { id: 'tracking', label: 'Clause Tracker', icon: Bell },
+    { id: 'apps', label: t('navbar.apps'), icon: Grid },
+    { id: 'tracking', label: t('navbar.tracking'), icon: Bell },
     { id: 'analytics', label: t('navbar.analytics'), icon: BarChart3 },
     { id: 'gamification', label: t('navbar.dashboard'), icon: Trophy },
     { id: 'comparison', label: t('navbar.compare'), icon: GitCompare },
@@ -70,7 +70,7 @@ export function Navbar({ user, currentView, onNavigate, onAuthClick, onSignOut }
           {/* Right Side - Language + Profile */}
           <div className="hidden md:flex items-center gap-3">
             <LanguageSelector />
-            
+
             {user ? (
               <div className="relative">
                 {/* Profile Button */}
@@ -173,7 +173,7 @@ export function Navbar({ user, currentView, onNavigate, onAuthClick, onSignOut }
                     </button>
                   );
                 })}
-                
+
                 {user ? (
                   <>
                     <button

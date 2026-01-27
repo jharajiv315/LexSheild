@@ -36,30 +36,30 @@ export default {
       impactDesc: "<bold>$14 billion lost annually</bold> to hidden fees, data sold without consent, and legal rights waived unknowingly"
     },
     process: {
-       badge: "Simple Process",
-       title: "How LexShield Works",
-       desc: "Get your safety score in just 3 simple steps",
-       steps: {
-          1: { title: "Submit ToS", desc: "Paste text, upload file, or enter URL from any service" },
-          2: { title: "AI Analyzes", desc: "Our AI scans thousands of clauses for hidden risks in seconds" },
-          3: { title: "Get Results", desc: "Receive safety score, risk breakdown, and actionable insights" }
-       }
+      badge: "Simple Process",
+      title: "How LexShield Works",
+      desc: "Get your safety score in just 3 simple steps",
+      steps: {
+        1: { title: "Submit ToS", desc: "Paste text, upload file, or enter URL from any service" },
+        2: { title: "AI Analyzes", desc: "Our AI scans thousands of clauses for hidden risks in seconds" },
+        3: { title: "Get Results", desc: "Receive safety score, risk breakdown, and actionable insights" }
+      }
     },
     features: {
-        badge: "Complete Platform",
-        title: "Everything You Need to Stay Protected",
-        desc: "Comprehensive tools for understanding your digital rights",
-        list: {
-            ai: { title: "AI-Powered Analysis", desc: "Advanced NLP detects hidden risks and unfair clauses instantly" },
-            scoring: { title: "Safety Scoring 0-100", desc: "Clear A-F grades with critical, high, medium, and low risk breakdown" },
-            assistant: { title: "AI Legal Assistant", desc: "24/7 chatbot answers your questions about specific clauses" },
-            comparison: { title: "Service Comparison", desc: "Compare terms side-by-side to find the safest alternatives" },
-            apps: { title: "30+ Pre-Analyzed Apps", desc: "Instant access to popular services like Instagram, TikTok, Netflix" },
-            tracking: { title: "Change Tracking", desc: "Get notified when Terms of Service are updated or modified" },
-            gamification: { title: "Gamification System", desc: "Earn XP, unlock badges, and climb the leaderboard" },
-            languages: { title: "11 Languages", desc: "Accessible in English, Spanish, Hindi, Chinese, and 7 more" },
-            analytics: { title: "Analytics Dashboard", desc: "Track trends, view statistics, and explore platform insights" }
-        }
+      badge: "Complete Platform",
+      title: "Everything You Need to Stay Protected",
+      desc: "Comprehensive tools for understanding your digital rights",
+      list: {
+        ai: { title: "AI-Powered Analysis", desc: "Advanced NLP detects hidden risks and unfair clauses instantly" },
+        scoring: { title: "Safety Scoring 0-100", desc: "Clear A-F grades with critical, high, medium, and low risk breakdown" },
+        assistant: { title: "AI Legal Assistant", desc: "24/7 chatbot answers your questions about specific clauses" },
+        comparison: { title: "Service Comparison", desc: "Compare terms side-by-side to find the safest alternatives" },
+        apps: { title: "30+ Pre-Analyzed Apps", desc: "Instant access to popular services like Instagram, TikTok, Netflix" },
+        tracking: { title: "Change Tracking", desc: "Get notified when Terms of Service are updated or modified" },
+        gamification: { title: "Gamification System", desc: "Earn XP, unlock badges, and climb the leaderboard" },
+        languages: { title: "11 Languages", desc: "Accessible in English, Spanish, Hindi, Chinese, and 7 more" },
+        analytics: { title: "Analytics Dashboard", desc: "Track trends, view statistics, and explore platform insights" }
+      }
     },
     testimonials: {
       title: "Trusted by Thousands",
@@ -281,6 +281,8 @@ export default {
   },
   navbar: {
     analyzer: 'Analyzer',
+    apps: 'Browse Apps',
+    tracking: 'Clause Tracker',
     analytics: 'Analytics',
     dashboard: 'Dashboard',
     compare: 'Compare',

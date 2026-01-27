@@ -281,6 +281,8 @@ export default {
   },
   navbar: {
     analyzer: 'વિશ્લેષક',
+    apps: 'ઍપ્સ બ્રાઉઝ કરો',
+    tracking: 'ક્લોઝ ટ્રૅકર',
     analytics: 'વિશ્લેષણ',
     dashboard: 'ડેશબોર્ડ',
     compare: 'સરખામણી',

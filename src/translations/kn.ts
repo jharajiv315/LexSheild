@@ -281,6 +281,8 @@ export default {
   },
   navbar: {
     analyzer: 'ವಿಶ್ಲೇಷಕ',
+    apps: 'ಆ್ಯಪ್‌ಗಳನ್ನು ಬ್ರೌಸ್ ಮಾಡಿ',
+    tracking: 'ಕ್ಲಾಸ್ ಟ್ರಾಕರ್',
     analytics: 'ವಿಶ್ಲೇಷಣೆ',
     dashboard: 'ಡ್ಯಾಶ್‌ಬೋರ್ಡ್',
     compare: 'ಹೋಲಿಕೆ',

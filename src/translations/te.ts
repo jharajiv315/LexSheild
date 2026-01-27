@@ -281,6 +281,8 @@ export default {
   },
   navbar: {
     analyzer: 'ఎనలైజర్',
+    apps: 'యాప్‌లను బ్రౌజ్ చేయండి',
+    tracking: 'క్లాజ్ ట్రాకర్',
     analytics: 'విశ్లేషణలు',
     dashboard: 'డాష్‌బోర్డ్',
     compare: 'పోల్చి చూడు',

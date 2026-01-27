@@ -86,6 +86,8 @@ export default {
   },
   navbar: {
     analyzer: 'বিশ্লেষক',
+    apps: 'অ্যাপ ব্রাউজ করুন',
+    tracking: 'ক্লজ ট্র্যাকার',
     analytics: 'বিশ্লেষণ',
     dashboard: 'ড্যাশবোর্ড',
     compare: 'তুলনা',

@@ -281,6 +281,8 @@ export default {
   },
   navbar: {
     analyzer: 'பகுப்பாய்வி',
+    apps: 'செயலிகளை உலாவுக',
+    tracking: 'க்ளாஸ் டிராக்கர்',
     analytics: 'பகுப்பாய்வு',
     dashboard: 'டாஷ்போர்டு',
     compare: 'ஒப்பிடு',

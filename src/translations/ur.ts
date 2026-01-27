@@ -281,6 +281,8 @@ export default {
   },
   navbar: {
     analyzer: 'تجزیہ کار',
+    apps: 'ایپس براؤز کریں',
+    tracking: 'کلاز ٹریکر',
     analytics: 'تجزیات',
     dashboard: 'ڈیش بورڈ',
     compare: 'موازنہ',

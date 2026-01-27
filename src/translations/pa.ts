@@ -281,6 +281,8 @@ export default {
   },
   navbar: {
     analyzer: 'ਵਿਸ਼ਲੇਸ਼ਕ',
+    apps: 'ਐਪਸ ਬ੍ਰਾਊਜ਼ ਕਰੋ',
+    tracking: 'ਕਲਾਜ਼ ਟਰੈਕਰ',
     analytics: 'ਵਿਸ਼ਲੇਸ਼ਣ',
     dashboard: 'ਡੈਸ਼ਬੋਰਡ',
     compare: 'ਤੁਲਨਾ',

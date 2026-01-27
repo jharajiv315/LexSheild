@@ -2,6 +2,7 @@ import { Shield, Upload, Link as LinkIcon, Sparkles, AlertTriangle, ArrowLeft, F
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { api } from '../services/api';
 
 interface AnalyzerProps {
   onAnalysisComplete: (results: any) => void;
@@ -42,119 +43,24 @@ export function Analyzer({ onAnalysisComplete, onBack }: AnalyzerProps) {
       });
     }, 200);
 
-    // Simulate AI analysis
-    setTimeout(() => {
-      clearInterval(progressInterval);
+    try {
+      // Real API call to Python backend
+      const results = await api.analyze({ text: tosText, url: url });
+
+      // Still simulate progress for better UX
       setProgress(100);
-
-      // Detect service name from text
-      const detectServiceName = (text: string) => {
-        const lowerText = text.toLowerCase();
-        if (lowerText.includes('instagram')) return 'Instagram';
-        if (lowerText.includes('whatsapp')) return 'WhatsApp';
-        if (lowerText.includes('tiktok')) return 'TikTok';
-        if (lowerText.includes('uber')) return 'Uber';
-        if (lowerText.includes('netflix')) return 'Netflix';
-        if (lowerText.includes('facebook')) return 'Facebook';
-        if (lowerText.includes('twitter') || lowerText.includes('x.com')) return 'Twitter/X';
-        if (lowerText.includes('amazon')) return 'Amazon';
-        if (lowerText.includes('google')) return 'Google';
-        return 'Unknown Service';
-      };
-
-      const serviceName = detectServiceName(tosText || url);
-      const baseScore = Math.floor(Math.random() * 40) + 30; // 30-70
-      const getGrade = (score: number) => {
-        if (score >= 85) return 'A';
-        if (score >= 70) return 'B';
-        if (score >= 55) return 'C';
-        if (score >= 40) return 'D';
-        return 'F';
-      };
-
-      // Mock analysis results - matching the correct format
-      const mockResults = {
-        serviceName,
-        safetyScore: baseScore,
-        grade: getGrade(baseScore),
-        analysisDate: new Date().toISOString(),
-        risks: {
-          critical: [
-            {
-              title: 'Data Sharing with Third Parties',
-              description: 'Your personal information may be shared with thousands of advertising partners without explicit consent.',
-              impact: 'HIGH'
-            },
-            {
-              title: 'Forced Arbitration',
-              description: 'You waive your right to sue in court. All disputes must go through binding arbitration.',
-              impact: 'HIGH'
-            }
-          ],
-          high: [
-            {
-              title: 'Content Ownership Transfer',
-              description: 'Platform can use your photos, videos, and posts in advertisements without compensation.',
-              impact: 'MEDIUM'
-            },
-            {
-              title: 'Unilateral Terms Changes',
-              description: 'Service can modify terms at any time without prior notice or user consent.',
-              impact: 'MEDIUM'
-            }
-          ],
-          medium: [
-            {
-              title: 'Automatic Renewal',
-              description: 'Subscription automatically renews unless cancelled 24 hours before renewal.',
-              impact: 'LOW'
-            },
-            {
-              title: 'Data Collection Scope',
-              description: 'Extensive data collection including location, contacts, and device information.',
-              impact: 'LOW'
-            },
-            {
-              title: 'Cookie Tracking',
-              description: 'Third-party cookies track your activity across websites and apps.',
-              impact: 'LOW'
-            }
-          ],
-          low: []
-        },
-        positives: [
-          {
-            title: 'Data Encryption',
-            description: 'Your data is encrypted in transit and at rest using industry-standard protocols.'
-          },
-          {
-            title: 'Account Deletion Rights',
-            description: 'You can permanently delete your account and all associated data at any time.'
-          },
-          {
-            title: 'Transparent Policy Updates',
-            description: 'Users will be notified 30 days before any policy changes take effect.'
-          },
-          {
-            title: 'GDPR Compliance',
-            description: 'Service complies with GDPR and provides data portability rights.'
-          }
-        ],
-        recommendations: [
-          'Review and adjust your privacy settings regularly',
-          'Be cautious about what personal information you share',
-          'Read policy updates when notified',
-          'Consider using two-factor authentication',
-          'Regularly review third-party app connections',
-          'Download your data periodically as backup'
-        ]
-      };
+      clearInterval(progressInterval);
 
       setTimeout(() => {
         setIsAnalyzing(false);
-        onAnalysisComplete(mockResults);
+        onAnalysisComplete(results);
       }, 500);
-    }, 2500);
+    } catch (error) {
+      console.error('Analysis failed:', error);
+      clearInterval(progressInterval);
+      setIsAnalyzing(false);
+      alert('Analysis failed. Please check if the backend is running.');
+    }
   };
 
   const loadExample = (example: any) => {
@@ -217,7 +123,7 @@ export function Analyzer({ onAnalysisComplete, onBack }: AnalyzerProps) {
             <Shield className="w-4 h-4 text-blue-400" />
             <span className="text-sm text-blue-400 font-medium">AI-Powered Instant Analysis</span>
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -226,7 +132,7 @@ export function Analyzer({ onAnalysisComplete, onBack }: AnalyzerProps) {
           >
             Analyze Any Terms of Service
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -259,7 +165,7 @@ export function Analyzer({ onAnalysisComplete, onBack }: AnalyzerProps) {
               <Sparkles className="w-4 h-4" />
               Text Input
             </button>
-            
+
             <button
               onClick={() => setInputMethod('url')}
               className={`
@@ -273,7 +179,7 @@ export function Analyzer({ onAnalysisComplete, onBack }: AnalyzerProps) {
               <LinkIcon className="w-4 h-4" />
               URL Input
             </button>
-            
+
             <button
               onClick={() => setInputMethod('file')}
               className={`
@@ -332,8 +238,8 @@ export function Analyzer({ onAnalysisComplete, onBack }: AnalyzerProps) {
           {/* File Upload */}
           {inputMethod === 'file' && (
             <div>
-              <label 
-                htmlFor="file-upload" 
+              <label
+                htmlFor="file-upload"
                 className="border-2 border-dashed border-white/10 rounded-xl p-12 text-center hover:border-blue-500/50 transition-all cursor-pointer group block"
               >
                 <input
@@ -379,7 +285,7 @@ export function Analyzer({ onAnalysisComplete, onBack }: AnalyzerProps) {
                   </div>
                 </div>
               )}
-              
+
               {/* Privacy Notice */}
               <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
                 <div className="flex items-start gap-3 text-left">
