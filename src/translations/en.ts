@@ -14,28 +14,68 @@ export default {
   hero: {
     title: 'Your AI Legal Guardian',
     subtitle: 'Analyze any Terms of Service in 10 seconds. Know your rights before you click "I agree".',
-    cta: 'Start Free Analysis',
+    cta: 'Get Started',
+    browseApps: 'Browse 30+ Apps',
+    subtext: '100% Free • No Sign-Up Required • Instant Results',
     demo: 'See Live Demo',
+    trustedBadge: 'Trusted by 12,500+ Users Worldwide',
     stats: {
-      users: 'Protected Users',
+      users: 'Users Protected',
       analyses: 'ToS Analyzed',
       risks: 'Risks Detected',
-      saved: 'Money Saved',
+      saved: 'Hidden Fees Found',
+    },
+    problem: {
+      badge: 'The Problem',
+      title: 'Nobody Reads Terms of Service',
+      desc: 'Yet we accept them every day, giving away our rights without knowing',
+      stat1: "Don't Read Before Accepting",
+      stat2: "Average Reading Time",
+      stat3: "Agreements Signed Per Year",
+      impactTitle: "The Cost of Not Knowing",
+      impactDesc: "<bold>$14 billion lost annually</bold> to hidden fees, data sold without consent, and legal rights waived unknowingly"
+    },
+    process: {
+       badge: "Simple Process",
+       title: "How LexShield Works",
+       desc: "Get your safety score in just 3 simple steps",
+       steps: {
+          1: { title: "Submit ToS", desc: "Paste text, upload file, or enter URL from any service" },
+          2: { title: "AI Analyzes", desc: "Our AI scans thousands of clauses for hidden risks in seconds" },
+          3: { title: "Get Results", desc: "Receive safety score, risk breakdown, and actionable insights" }
+       }
     },
     features: {
-      ai: {
-        title: 'AI-Powered Analysis',
-        desc: 'Advanced NLP scans thousands of clauses instantly',
-      },
-      realtime: {
-        title: 'Real-Time Results',
-        desc: 'Get your safety score in under 10 seconds',
-      },
-      comparison: {
-        title: 'Service Comparison',
-        desc: 'Compare terms across different platforms',
-      },
+        badge: "Complete Platform",
+        title: "Everything You Need to Stay Protected",
+        desc: "Comprehensive tools for understanding your digital rights",
+        list: {
+            ai: { title: "AI-Powered Analysis", desc: "Advanced NLP detects hidden risks and unfair clauses instantly" },
+            scoring: { title: "Safety Scoring 0-100", desc: "Clear A-F grades with critical, high, medium, and low risk breakdown" },
+            assistant: { title: "AI Legal Assistant", desc: "24/7 chatbot answers your questions about specific clauses" },
+            comparison: { title: "Service Comparison", desc: "Compare terms side-by-side to find the safest alternatives" },
+            apps: { title: "30+ Pre-Analyzed Apps", desc: "Instant access to popular services like Instagram, TikTok, Netflix" },
+            tracking: { title: "Change Tracking", desc: "Get notified when Terms of Service are updated or modified" },
+            gamification: { title: "Gamification System", desc: "Earn XP, unlock badges, and climb the leaderboard" },
+            languages: { title: "11 Languages", desc: "Accessible in English, Spanish, Hindi, Chinese, and 7 more" },
+            analytics: { title: "Analytics Dashboard", desc: "Track trends, view statistics, and explore platform insights" }
+        }
     },
+    testimonials: {
+      title: "Trusted by Thousands",
+      desc: "Real people protecting their digital rights every day",
+      items: {
+        1: { quote: "LexShield helped me understand what Instagram was doing with my photos. I changed my privacy settings immediately!", author: "Sarah M.", role: "Content Creator" },
+        2: { quote: "As a small business owner, I use this for every SaaS tool we evaluate. Saved us from a terrible contract!", author: "Mike Chen", role: "Startup Founder" },
+        3: { quote: "Finally, someone made legal jargon understandable. The AI chatbot answers all my questions in plain English.", author: "Priya Sharma", role: "Privacy Advocate" }
+      }
+    },
+    finalCta: {
+      title: "Ready to Protect Your Rights?",
+      desc: "Join 12,500+ users who analyze Terms of Service before clicking \"I agree\"",
+      button: "Get Started Now",
+      note: "No credit card required • Takes 10 seconds"
+    }
   },
   analyzer: {
     title: 'Analyze Any Terms of Service',
@@ -247,4 +287,29 @@ export default {
     chat: 'AI Chat',
     profile: 'Profile',
   },
+  footer: {
+    tagline: "AI-powered legal protection for everyone. Analyze Terms of Service in seconds.",
+    product: {
+      title: "Product",
+      features: "Features",
+      howItWorks: "How it Works",
+      pricing: "Pricing",
+      faq: "FAQ"
+    },
+    resources: {
+      title: "Resources",
+      blog: "Blog",
+      guide: "Legal Guide",
+      api: "API Docs",
+      support: "Support"
+    },
+    legal: {
+      title: "Legal",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+      cookie: "Cookie Policy",
+      disclaimer: "Disclaimer"
+    },
+    copyright: "© 2026 LexShield. All rights reserved."
+  }
 };

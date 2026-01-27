@@ -10,7 +10,7 @@ import { Analytics } from './components/Analytics';
 import { AppDatabase } from './components/AppDatabase';
 import { ClauseTracking } from './components/ClauseTracking';
 import { Navbar } from './components/Navbar';
-import { LanguageProvider } from './contexts/LanguageContext';
+import { api } from './services/api';
 
 
 export type ViewType = 'hero' | 'analyzer' | 'results' | 'gamification' | 'comparison' | 'profile' | 'chatbot' | 'analytics' | 'apps' | 'tracking';
@@ -161,6 +161,13 @@ function App() {
       </div>
     );
   }
+
+  useEffect(() => {
+    // Check backend connection
+    api.healthCheck()
+      .then(data => console.log('Backend connected:', data))
+      .catch(err => console.error('Backend connection failed:', err));
+  }, []);
 
   return (
     <LanguageProvider>

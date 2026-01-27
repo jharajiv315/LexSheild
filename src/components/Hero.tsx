@@ -68,7 +68,7 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
               className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-sm"
             >
               <Sparkles className="w-4 h-4 text-yellow-400" />
-              <span className="text-sm text-gray-300">Trusted by 12,500+ Users Worldwide</span>
+              <span className="text-sm text-gray-300">{t('hero.trustedBadge')}</span>
             </motion.div>
             
             {/* Main Heading */}
@@ -91,7 +91,7 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Analyze any Terms of Service in <span className="text-white font-semibold">10 seconds</span>. Create your free account to start protecting your digital rights.
+              {t('hero.subtitle')}
             </motion.p>
             
             {/* CTA Buttons */}
@@ -106,7 +106,7 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
                 className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-xl font-semibold text-lg shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2"
               >
                 <Shield className="w-5 h-5" />
-                Get Started
+                {t('hero.cta')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               
@@ -116,7 +116,7 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
                   className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-2"
                 >
                   <BarChart3 className="w-5 h-5" />
-                  Browse 30+ Apps
+                  {t('hero.browseApps')}
                 </button>
               )}
             </motion.div>
@@ -129,7 +129,7 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
               className="text-sm text-gray-500 flex items-center justify-center gap-2"
             >
               <Lock className="w-4 h-4" />
-              100% Free • No Sign-Up Required • Instant Results
+              {t('hero.subtext')}
             </motion.p>
             
             {/* Stats */}
@@ -144,28 +144,28 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
                   <Users className="w-6 h-6 text-blue-400" />
                   <div className="text-4xl font-bold text-white">12.5K+</div>
                 </div>
-                <div className="text-sm text-gray-400">Users Protected</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.users')}</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Zap className="w-6 h-6 text-purple-400" />
                   <div className="text-4xl font-bold text-white">89.4K+</div>
                 </div>
-                <div className="text-sm text-gray-400">ToS Analyzed</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.analyses')}</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <TrendingDown className="w-6 h-6 text-red-400" />
                   <div className="text-4xl font-bold text-white">4.2K+</div>
                 </div>
-                <div className="text-sm text-gray-400">Risks Detected</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.risks')}</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <TrendingUp className="w-6 h-6 text-pink-400" />
                   <div className="text-4xl font-bold text-white">$2.3M</div>
                 </div>
-                <div className="text-sm text-gray-400">Hidden Fees Found</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.saved')}</div>
               </div>
             </motion.div>
           </div>
@@ -194,21 +194,21 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full mb-4">
               <AlertTriangle className="w-4 h-4 text-red-400" />
-              <span className="text-sm text-red-400 font-medium">The Problem</span>
+              <span className="text-sm text-red-400 font-medium">{t('hero.problem.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Nobody Reads Terms of Service
+              {t('hero.problem.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Yet we accept them every day, giving away our rights without knowing
+              {t('hero.problem.desc')}
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { stat: "91%", label: "Don't Read Before Accepting", icon: Eye, color: "red" },
-              { stat: "40+ min", label: "Average Reading Time", icon: Clock, color: "orange" },
-              { stat: "1,462", label: "Agreements Signed Per Year", icon: Database, color: "yellow" }
+              { stat: "91%", label: t('hero.problem.stat1'), icon: Eye, color: "red" },
+              { stat: "40+ min", label: t('hero.problem.stat2'), icon: Clock, color: "orange" },
+              { stat: "1,462", label: t('hero.problem.stat3'), icon: Database, color: "yellow" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -233,11 +233,8 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
             className="mt-12 bg-gradient-to-r from-red-600/20 to-orange-600/20 border border-red-500/30 rounded-2xl p-8 text-center"
           >
             <AlertTriangle className="w-12 h-12 text-red-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">The Cost of Not Knowing</h3>
-            <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-              <strong className="text-white">$14 billion lost annually</strong> to hidden fees, 
-              data sold without consent, and legal rights waived unknowingly
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-2">{t('hero.problem.impactTitle')}</h3>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: t('hero.problem.impactDesc') }} />
           </motion.div>
         </div>
       </section>
@@ -253,13 +250,13 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4">
               <Zap className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-blue-400 font-medium">Simple Process</span>
+              <span className="text-sm text-blue-400 font-medium">{t('hero.process.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              How LexShield Works
+              {t('hero.process.title')}
             </h2>
             <p className="text-xl text-gray-400">
-              Get your safety score in just 3 simple steps
+              {t('hero.process.desc')}
             </p>
           </motion.div>
 
@@ -270,22 +267,22 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
             {[
               {
                 step: "01",
-                title: "Submit ToS",
-                desc: "Paste text, upload file, or enter URL from any service",
+                title: t('hero.process.steps.1.title'),
+                desc: t('hero.process.steps.1.desc'),
                 icon: Database,
                 color: "blue"
               },
               {
                 step: "02",
-                title: "AI Analyzes",
-                desc: "Our AI scans thousands of clauses for hidden risks in seconds",
+                title: t('hero.process.steps.2.title'),
+                desc: t('hero.process.steps.2.desc'),
                 icon: Brain,
                 color: "purple"
               },
               {
                 step: "03",
-                title: "Get Results",
-                desc: "Receive safety score, risk breakdown, and actionable insights",
+                title: t('hero.process.steps.3.title'),
+                desc: t('hero.process.steps.3.desc'),
                 icon: Shield,
                 color: "pink"
               }
@@ -323,13 +320,13 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full mb-4">
               <Star className="w-4 h-4 text-purple-400" />
-              <span className="text-sm text-purple-400 font-medium">Complete Platform</span>
+              <span className="text-sm text-purple-400 font-medium">{t('hero.features.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Everything You Need to Stay Protected
+              {t('hero.features.title')}
             </h2>
             <p className="text-xl text-gray-400">
-              Comprehensive tools for understanding your digital rights
+              {t('hero.features.desc')}
             </p>
           </motion.div>
 
@@ -337,56 +334,56 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
             {[
               {
                 icon: Shield,
-                title: "AI-Powered Analysis",
-                desc: "Advanced NLP detects hidden risks and unfair clauses instantly",
+                title: t('hero.features.list.ai.title'),
+                desc: t('hero.features.list.ai.desc'),
                 gradient: "from-blue-500 to-blue-600"
               },
               {
                 icon: BarChart3,
-                title: "Safety Scoring 0-100",
-                desc: "Clear A-F grades with critical, high, medium, and low risk breakdown",
+                title: t('hero.features.list.scoring.title'),
+                desc: t('hero.features.list.scoring.desc'),
                 gradient: "from-purple-500 to-purple-600"
               },
               {
                 icon: MessageSquare,
-                title: "AI Legal Assistant",
-                desc: "24/7 chatbot answers your questions about specific clauses",
+                title: t('hero.features.list.assistant.title'),
+                desc: t('hero.features.list.assistant.desc'),
                 gradient: "from-pink-500 to-pink-600"
               },
               {
                 icon: GitCompare,
-                title: "Service Comparison",
-                desc: "Compare terms side-by-side to find the safest alternatives",
+                title: t('hero.features.list.comparison.title'),
+                desc: t('hero.features.list.comparison.desc'),
                 gradient: "from-green-500 to-green-600"
               },
               {
                 icon: Database,
-                title: "30+ Pre-Analyzed Apps",
-                desc: "Instant access to popular services like Instagram, TikTok, Netflix",
+                title: t('hero.features.list.apps.title'),
+                desc: t('hero.features.list.apps.desc'),
                 gradient: "from-orange-500 to-orange-600"
               },
               {
                 icon: Bell,
-                title: "Change Tracking",
-                desc: "Get notified when Terms of Service are updated or modified",
+                title: t('hero.features.list.tracking.title'),
+                desc: t('hero.features.list.tracking.desc'),
                 gradient: "from-red-500 to-red-600"
               },
               {
                 icon: Award,
-                title: "Gamification System",
-                desc: "Earn XP, unlock badges, and climb the leaderboard",
+                title: t('hero.features.list.gamification.title'),
+                desc: t('hero.features.list.gamification.desc'),
                 gradient: "from-yellow-500 to-yellow-600"
               },
               {
                 icon: Globe,
-                title: "11 Languages",
-                desc: "Accessible in English, Spanish, Hindi, Chinese, and 7 more",
+                title: t('hero.features.list.languages.title'),
+                desc: t('hero.features.list.languages.desc'),
                 gradient: "from-cyan-500 to-cyan-600"
               },
               {
                 icon: BarChart3,
-                title: "Analytics Dashboard",
-                desc: "Track trends, view statistics, and explore platform insights",
+                title: t('hero.features.list.analytics.title'),
+                desc: t('hero.features.list.analytics.desc'),
                 gradient: "from-indigo-500 to-indigo-600"
               }
             ].map((feature, idx) => (
@@ -419,31 +416,31 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Trusted by Thousands
+              {t('hero.testimonials.title')}
             </h2>
             <p className="text-xl text-gray-400">
-              Real people protecting their digital rights every day
+              {t('hero.testimonials.desc')}
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                quote: "LexShield helped me understand what Instagram was doing with my photos. I changed my privacy settings immediately!",
-                author: "Sarah M.",
-                role: "Content Creator",
+                quote: t('hero.testimonials.items.1.quote'),
+                author: t('hero.testimonials.items.1.author'),
+                role: t('hero.testimonials.items.1.role'),
                 rating: 5
               },
               {
-                quote: "As a small business owner, I use this for every SaaS tool we evaluate. Saved us from a terrible contract!",
-                author: "Mike Chen",
-                role: "Startup Founder",
+                quote: t('hero.testimonials.items.2.quote'),
+                author: t('hero.testimonials.items.2.author'),
+                role: t('hero.testimonials.items.2.role'),
                 rating: 5
               },
               {
-                quote: "Finally, someone made legal jargon understandable. The AI chatbot answers all my questions in plain English.",
-                author: "Priya Sharma",
-                role: "Privacy Advocate",
+                quote: t('hero.testimonials.items.3.quote'),
+                author: t('hero.testimonials.items.3.author'),
+                role: t('hero.testimonials.items.3.role'),
                 rating: 5
               }
             ].map((testimonial, idx) => (
@@ -496,23 +493,23 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
             <div className="relative z-10">
               <Shield className="w-16 h-16 text-blue-400 mx-auto mb-6" />
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Ready to Protect Your Rights?
+                {t('hero.finalCta.title')}
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join 12,500+ users who analyze Terms of Service before clicking "I agree"
+                {t('hero.finalCta.desc')}
               </p>
               
               <button
                 onClick={onGetStarted}
                 className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-xl font-bold text-xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70 transition-all duration-300 inline-flex items-center gap-3"
               >
-                Get Started Now
+                {t('hero.finalCta.button')}
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </button>
 
               <p className="text-sm text-gray-400 mt-6 flex items-center justify-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-400" />
-                No credit card required • Takes 10 seconds
+                {t('hero.finalCta.note')}
               </p>
             </div>
           </motion.div>
@@ -529,44 +526,44 @@ export function Hero({ onGetStarted, onBrowseApps, onAuthClick }: HeroProps) {
                 <span className="text-xl font-bold text-white">LexShield</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                AI-powered legal protection for everyone. Analyze Terms of Service in seconds.
+                {t('footer.tagline')}
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4">Product</h4>
+              <h4 className="font-semibold text-white mb-4">{t('footer.product.title')}</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">How it Works</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.product.features')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.product.howItWorks')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.product.pricing')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.product.faq')}</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4">Resources</h4>
+              <h4 className="font-semibold text-white mb-4">{t('footer.resources.title')}</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Legal Guide</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API Docs</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Support</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.resources.blog')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.resources.guide')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.resources.api')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.resources.support')}</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4">Legal</h4>
+              <h4 className="font-semibold text-white mb-4">{t('footer.legal.title')}</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Disclaimer</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.legal.privacy')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.legal.terms')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.legal.cookie')}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">{t('footer.legal.disclaimer')}</a></li>
               </ul>
             </div>
           </div>
 
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              © 2026 LexShield. All rights reserved.
+              {t('footer.copyright')}
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

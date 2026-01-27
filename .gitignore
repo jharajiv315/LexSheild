@@ -7,3 +7,7 @@ coverage
 .vscode
 .idea
 *.log
+
+# Python
+backend/venv/
+**/__pycache__/
