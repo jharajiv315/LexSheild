@@ -11,6 +11,7 @@ import { AppDatabase } from './components/AppDatabase';
 import { ClauseTracking } from './components/ClauseTracking';
 import { Navbar } from './components/Navbar';
 import { api } from './services/api';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 
 export type ViewType = 'hero' | 'analyzer' | 'results' | 'gamification' | 'comparison' | 'profile' | 'chatbot' | 'analytics' | 'apps' | 'tracking';
